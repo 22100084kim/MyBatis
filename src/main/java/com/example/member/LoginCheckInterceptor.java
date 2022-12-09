@@ -1,6 +1,4 @@
-package com.example.util;
-
-import org.springframework.web.servlet.HandlerExecutionChain;
+package com.example.member;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

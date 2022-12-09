@@ -1,8 +1,9 @@
-package com.example.dao;
+package com.example;
 
-import com.example.bean.BoardVO;
+import com.example.BoardVO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -26,23 +27,15 @@ public class BoardDAO {
         List<BoardVO> list = sqlSession.selectList("Board.getBoardList");
         return list;
     }
-//    public int updateBoard(BoardVO vo){
-//        int result = sqlSession.update("Board.updateBoard",vo);
-//        return result;
-//    }
+    public int updateBoard(BoardVO vo){
+        int result = sqlSession.update("Board.updateBoard",vo);
+        return result;
+    }
 
-//    public deleteBoard(BoardVO vo){
-//        int result = sqlSession.delete("Board.deleteBoard",vo);
-//        return result;
-//    }
+    public int deleteBoard(int id){
+        int result = sqlSession.delete("Board.deleteBoard",id);
+        return result;
+    }
 
-//    public int selectOneBoard(BoardVO vo){
-//        int result = sqlSession.selectOne("Board.selectBoard",vo);
-//        return result;
-//    }
-//
-//    public int selectListBoard(BoardVO vo){
-//        int result = sqlSession.selectList("Board.selectListBoard",vo);
-//        return result;
-//    }
+
 }
